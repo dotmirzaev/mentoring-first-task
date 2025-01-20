@@ -1,5 +1,7 @@
 <div class="todos-container">
-  <div class="todos-card" *ngFor="let todo of todos">
-    <app-todo-card [todo] = "todo" (deleteTodo)="deleteTodo($event)"></app-todo-card>
-  </div>
+    <div class="todos-card" *ngFor="let todo of todosService.todosSubject | async">
+      <app-todo-card [todo] = "todo"></app-todo-card>
+      <button (click)="deleteTodo(todo.id)">Удалить задачу</button>
+    </div>
 </div>
+

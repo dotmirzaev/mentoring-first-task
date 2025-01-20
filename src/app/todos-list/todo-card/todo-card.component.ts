@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import {NgFor} from "@angular/common";
+import { TodosService } from "../../todos.service";
+
 
 
 @Component({

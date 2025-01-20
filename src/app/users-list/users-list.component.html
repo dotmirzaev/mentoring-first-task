@@ -1,8 +1,7 @@
-Компонент списка юзеров
 <div class="users-container">
-    <div class="users-card" *ngFor="let item of users">
-        <app-user-card [user] = "item"></app-user-card>
-        <button (click)="deleteUser(item.id)">Удалить</button>
+    <div class="users-card" *ngFor="let user of usersService.usersSubject | async">
+        <app-user-card [user] = "user"></app-user-card>
+        <button (click)="deleteUser(user.id)">Удалить</button>
     </div>
 </div>
 
